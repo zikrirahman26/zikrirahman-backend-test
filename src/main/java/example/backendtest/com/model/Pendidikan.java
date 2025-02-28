@@ -13,12 +13,13 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Entity
 @Table(name = "pendidikan")
-public class Pedidikan {
+public class Pendidikan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String status;
     @CreationTimestamp
-    private Timestamp created;
+    private Timestamp time_create;
+    private int idMurid;
 }
