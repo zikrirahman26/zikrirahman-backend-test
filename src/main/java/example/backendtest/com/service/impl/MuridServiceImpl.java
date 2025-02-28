@@ -26,7 +26,9 @@ public class MuridServiceImpl implements MuridService {
     public void updateMurid(Murid murid, int id) {
         Optional<Murid> muridOptional = muridRepository.findById(id);
         if (muridOptional.isPresent()) {
-            muridRepository.save(murid);
+            Murid entity = muridOptional.get();
+            entity.setName(murid.getName());
+            muridRepository.save(entity);
         }
     }
 
